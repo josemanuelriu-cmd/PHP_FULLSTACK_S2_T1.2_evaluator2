@@ -4,42 +4,10 @@
 ## 📈 Resumen
 ✅ 1 correctas de 10 queries
 
-## ❌ Query 1: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,13 +1,25 @@
- apellido1 | apellido2 | nombre
- Domínguez | Guerrero | Antonio
-+Fahey | Considine | Antonio
- Gea | Ruiz | Sonia
- Gutiérrez | López | Juan
-+Hamill | Kozey | Manolo
- Heller | Pagac | Pedro
- Herman | Pacocha | Daniel
- Hernández | Martínez | Irene
- Herzog | Tremblay | Ramón
-+Kohler | Schoen | Alejandro
- Koss | Bayer | José
- Lakin | Yundt | Inma
-+Lemke | Rutherford | Cristina
-+Monahan | Murray | Micaela
-+Ramirez | Gea | Zoe
-+Ruecker | Upton | Guillermo
- Saez | Vega | Juan
- Sánchez | Pérez | Salvador
-+Schmidt | Fisher | David
-+Schowalter | Muller | Francesca
-+Spencer | Lakin | Esther
-+Stiedemann | Morissette | Alfredo
-+Streich | Hirthe | Carmen
- Strosin | Turcotte | Ismael
-```
+## ❌ Query 1: Error
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alumno_se_matricula_asignatura am ON am.id_alumno=p.id
+  ORDER BY p.apellido1, p' at line 2
 
-⏱ Tiempo: 0.34 ms
-🔍 No se usó ningún índice en esta consulta.
-
----
 
 ## ❌ Query 2: Incorrecto
 ```diff
@@ -56,14 +24,14 @@
 +Francesca | Schowalter | Muller
 ```
 
-⏱ Tiempo: 0.29 ms
+⏱ Tiempo: 0.38 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
