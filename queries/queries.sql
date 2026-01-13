@@ -92,10 +92,16 @@ LEFT JOIN asignatura a ON a.id_profesor=pr.id_profesor
 WHERE a.id is NULL;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
-
+SELECT DISTINCT a.id, a.nombre
+FROM asignatura a
+LEFT JOIN profesor pr ON pr.id_profesor=a.id_profesor
+WHERE pr.id_profesor IS NULL;
 
 -- 15. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar. (nombre)
-
+SELECT DISTINCT d.nombre
+FROM departamento d
+LEFT JOIN profesor pr ON pr.id_departamento=d.id
+LEFT JOIN asignatura a ON pr.id_profesor=a.id_profesor;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
 
