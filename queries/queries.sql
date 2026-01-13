@@ -23,10 +23,10 @@ SELECT nombre, apellido1, apellido2, nif
 --en el tercer curs del grau que té l'identificador 7. (id, nombre, cuatrimestre, curso, id_grado)
 SELECT a.id, a.nombre, a.cuatrimestre, a.curso, a.id_grado 
   FROM asignatura as a 
-  WHERE a.cuatrimestre=1 and a.curso=3 and id_grado=7;
+  WHERE a.cuatrimestre=1 and a.curso=3 and a.id_grado=7;
 
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom. (apellido1, apellido2, nombre, departamento)
-SELECT p.apellido1, p.apellido2, p.nombre, d.nombre
+SELECT p.apellido1, p.apellido2, p.nombre, d.nombre as departamento
   FROM persona AS p
   INNER JOIN profesor as pr
 	  ON pr.id_profesor=p.id
@@ -36,7 +36,15 @@ SELECT p.apellido1, p.apellido2, p.nombre, d.nombre
     ORDER BY p.apellido1, p.apellido2, p.nombre, d.nombre;
 
 -- 7. Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M. (nombre, anyo_inicio, anyo_fin)
-SELECT  FROM  ORDER BY;
+SELECT a.nombre, ce.anyo_inicio, ce.anyo_fin 
+FROM asignatura as a
+INNER JOIN alumno_se_matricula_asignatura as am
+ON am.id_asignatura=a.id
+INNER JOIN curso_escolar as ce
+ON ce.id=am.id_curso_escolar
+INNER JOIN persona as p
+ON p.id=am.id_alumno
+WHERE p.nif='26902806M';
 
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015). (nombre)
 SELECT  FROM  ORDER BY;
