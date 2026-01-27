@@ -101,7 +101,8 @@ WHERE pr.id_profesor IS NULL;
 SELECT DISTINCT d.nombre
 FROM departamento d
 LEFT JOIN profesor pr ON pr.id_departamento=d.id
-LEFT JOIN asignatura a ON pr.id_profesor=a.id_profesor;
+LEFT JOIN asignatura a ON pr.id_profesor=a.id_profesor
+WHERE a.id IS NULL;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
 SELECT COUNT(id) AS total FROM persona WHERE tipo='alumno';
